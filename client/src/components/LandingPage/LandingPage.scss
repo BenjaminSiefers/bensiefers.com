@@ -1,0 +1,701 @@
+$break-large: 1450px;
+$break-medium: 800px;
+$break-small: 550px;
+$break-extra-small: 350px;
+.LandingPage{
+
+    header{
+        
+        .Menu{
+            top: -60px;
+            transition: .25s;
+            z-index: 2;
+            width: 60%;
+            text-align: center;
+            position: fixed;
+            ul{ 
+
+                transition: .25s;     
+                position: relative;
+                background: transparent;
+                li{        
+                    margin: 10px;
+                    font-size: 20px;
+                    display: inline-block;
+                }
+            }
+        }
+        nav{
+            z-index: 3;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            background: white;
+            border-bottom: solid .5px lightgray;
+            transition: .25s;
+            display: flex;
+            justify-content: space-between;
+            .Brand{
+                width: 200px;
+                position: relative;
+                img{
+                    margin: 5px;
+                    height: 40px;
+                }
+                h2{
+                    font-family: 'Oxygen';
+                    top: 25px;
+                    margin-left: 10px;;
+                    transform: translateY(-50%);
+                    position: absolute;
+                    display: inline;
+                }  
+            }
+            .Desktop-Menu{
+                position: absolute;
+                right: 0;
+                display: flex;
+                line-height: 50px;
+                margin-right: 40px;
+                li{
+                    font-size: 20px;
+                    margin: 0 10px;
+                }
+            }
+            i{
+                cursor: pointer;
+                color: lightgray;
+                font-size: 30px;
+                margin: 10px;
+                display: none;                
+            }
+        }
+        @media screen and (max-width: $break-medium){
+            .Desktop-Menu{
+                li{
+                    display: none;
+                }
+            }
+            .Menu{
+                width: 100%;
+                top: 50px;
+                right: 0;
+                ul{
+                    background: white;
+                    transform: translateY(calc(-100% - 50px));
+                    li{
+                        margin: 0;
+                        width: 100%;
+                        border-bottom: 1px  solid lightgray;
+                        padding: 5px;
+                        display: block;
+                    }
+                    
+                }
+            }
+            nav i{
+                display: block;
+            }
+
+        }
+    }
+    .Splash{
+        z-index: 0;
+        width: 100%;
+        height: 100vh;
+        .TitleBox{
+            z-index: 1;
+            text-align: center;
+            position: absolute;
+            width: 1000px;
+            display: block;
+            left: 50%;
+            top: 25%;
+            transform: translateY(-50%);
+            transform: translateX(-50%);
+            h1{
+                font-size: 60px;
+            }
+            h2{
+                font-size: 30px;
+            }
+            @media screen and (max-width: $break-large){
+                width: 600px;
+                h1{
+                    font-size: 40px;
+                }
+                h2{
+                    font-size: 30px;
+                }
+            }
+            @media screen and (max-width: $break-medium){
+                width: 450px;
+                h1{
+                    font-size: 30px;
+                }
+                h2{
+                    font-size: 20px;
+                }
+            }
+            @media screen and (max-width: $break-small){
+                width: 350px;
+                h1{
+                    font-size: 23px;
+                }
+                h2{
+                    font-size: 15px;
+                }
+            }
+            @media screen and (max-width: $break-extra-small) {
+                width: 100%;
+                h1{
+                    font-size: 20px;
+                }
+                h2{
+                    font-size: 15px;
+                }
+            }
+        }
+        .Skyline{
+            z-index: -1;
+            height: 100vh;
+            width: 100%;
+            position: absolute; 
+            top: 0;
+            left: 0;          
+            background: url("static/background.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position:  center top;
+        }
+        .Clouds{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            canvas{
+                width: 100% !important;
+                height: 100vh !important; 
+            }
+        }
+    }
+    .Profile{
+        z-index: 2;
+        background: white;
+        padding: 30px 0;
+        h3{
+            font-size: 26px;
+        }
+        .AboutMe{
+            min-height: 300px;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 25% 55%;
+            @media screen and (max-width: $break-large){
+                grid-template-columns: 80%;
+            }
+            & > div{
+                justify-self: center;
+                align-self: center;
+            }
+            & >  img{
+                justify-self: center;
+                align-self: center;
+                @media screen and (max-width: $break-large){
+                    grid-row: 1;
+                    margin: 50px;
+                }
+            }
+            img{
+                width: 230px;
+                height: 230px;
+                border: solid 6px #233977;
+                border-radius: 300px;
+                @media screen and (max-width: $break-extra-small){
+                    height: 90vw;
+                    width: 90vw;
+                    max-width: 230px;
+                    max-height: 230px;
+                }
+            }
+            p{
+                color: rgb(60, 60, 60);
+                font-size: 20px;
+            }
+        }
+        .ThoughtProcess{
+            min-height: 300px;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 55% 25%;
+            @media screen and (max-width: $break-large){
+                grid-template-columns: 80%;
+            }
+            & > div{
+                justify-self: center;
+                align-self: center;
+            }
+            & >  img{
+                height: 230px;
+                justify-self: center;
+                align-self: center;
+                @media screen and (max-width: $break-large){
+                    grid-row: 1;
+                    margin: 50px;
+                }
+                @media screen and (max-width: $break-extra-small){
+                    max-width: 230px;
+                    height: auto;
+                    width: 90vw;
+                }
+            }
+            p{
+                color: rgb(60, 60, 60);
+                font-size: 20px;
+            }
+        }
+
+    }
+    .Skills{
+        z-index: 2;
+        background: white;
+        p{
+            color: rgb(60, 60, 60);
+            font-size: 20px;
+        }
+        h3{
+            font-size: 26px;
+        }
+        .Container{
+            padding: 30px 0;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 30% 2% 24% 24%;
+            & > .Description {
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+            .Spacer{
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
+            .Skills1{
+                grid-column-start: 3;
+                grid-column-end: 4;
+            }
+            .Skills2{
+                grid-column-start: 4;
+                grid-column-end: 5;
+            }
+            @media screen and (max-width: $break-large){
+                p{
+                    width: 80vw;
+                }
+                & > .Description {
+                    grid-column-start: 1;
+                    grid-column-end: 5;
+                }
+                .Spacer{
+                    grid-column-start: 0;
+                    grid-column-end: 0;
+                }
+                .Skills1{
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                }
+                .Skills2{
+                    grid-column-start: 3;
+                    grid-column-end: 5;
+                }     
+                     
+            }
+            @media screen and (max-width: $break-medium){
+                & > .Description {
+                    grid-column-start: 1;
+                    grid-column-end: 5;
+                }
+                .Spacer{
+                    grid-column-start: 0;
+                    grid-column-end: 0;
+                }
+                .Skills1{
+                    grid-column-start: 1;
+                    grid-column-end: 5;
+                }
+                .Skills2{
+                    grid-column-start: 1;
+                    grid-column-end: 5;
+                }   
+            }
+            & > div, & > ul{
+                align-self: center;
+            }
+            ul{
+                margin: 25px 0;
+                li{
+                    font-weight: bold;
+                    font-size: 19px;
+                    color: #106e7c;
+                    i{
+                        color: #0dac7c;
+                    }
+                }
+            }
+        }
+    }
+    .Companies{
+        z-index: 2;
+        background: white;
+        padding: 30px 0;
+        & > .Container{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 40% 40%;
+            @media screen and (max-width: $break-large){
+                grid-template-columns: 80%;
+                & > div{
+                    margin: 20px 0;
+                }
+            }
+        }
+        h3{
+            font-size: 26px;
+        }
+
+        p{
+            color: rgb(60, 60, 60);
+            padding: 0 15px;
+            font-size: 20px;
+        }
+    }
+    .Projects{        
+        z-index: 2;
+        background: white;
+        padding: 30px 0;
+        h2{
+            margin: auto;
+            width: 80%;
+        }
+        & > .Container{
+            display: grid;
+            grid-template-columns: 20vw 20vw 20vw 20vw;
+            grid-template-rows: 20vw 20vw;
+            grid-gap: 10px;
+            justify-content: center;
+            @media screen and (max-width: $break-large){
+                grid-template-columns: 40vw 40vw;
+                grid-template-rows: 40vw 40vw 40vw 40vw;
+            }
+            @media screen and (max-width: $break-medium){
+                grid-template-columns: 80vw;
+                grid-template-rows: 80vw 80vw 80vw 80vw
+                                    80vw 80vw 80vw 80vw; 
+            }
+            @media screen and (max-width: $break-small){
+
+            }
+            .Box{
+                overflow: hidden;
+                position: relative;
+                justify-self: center;
+                align-self: center;
+                width: 100%;
+                height: 100%;
+                background: lightblue;
+                h3{
+                    text-align: center;
+                    color: #ffffff;
+                    font-size: 20px;
+                    padding: 20px 20px 10px 20px;
+                }
+                p{
+                    text-align: center;
+                    font-size: 16px;
+                    color: rgba(255, 255, 255, 1);
+                    padding: 0 20px 20px 20px;
+                }
+                button{
+                    float: right;
+                    margin-right: 60px;
+                    color: white;
+                    font-size: 16px;
+                    background: none;
+                    border: white solid 2px;
+                    border-radius: 10px;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                }
+                .Cover{
+                    background-size: cover;
+                    background-position: top center;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    z-index: 1;
+                    background: lightcoral;
+                    width: 100%;
+                    height: 100%;
+                    transition: ease-out .25s;
+                    h3{
+                        top: 50%;
+                        margin-top: 50px;
+                        font-size: 30px;
+                    }
+                }
+                &:hover{
+                    background: rgb(21, 88, 214);
+                    .Cover{
+                        transition: ease-out .25s;
+                        transform: translateY(-100%);
+                    }
+                }
+                &#CompuCell3D .Cover{
+                    background: url("static/CC3D.png");
+                    background-position: center;
+                    background-size: cover;
+                }
+                &#HoosierConnection .Cover{
+                    background: url("static/HC.jpg");
+                    background-position: center;
+                    background-size: cover;
+                }
+                &#UpBeat .Cover{
+                    background: url("static/upbeat.png");
+                    background-position: center;
+                    background-size: cover;
+                }
+                &#MapReduce .Cover{
+                    background: url("static/code.jpg");
+                    background-position: center;
+                    background-size: cover;
+                }
+                &#Constuctor .Cover{
+                    background: url("static/code.jpg");
+                    background-position: center;
+                    background-size: cover;
+                }
+                &#TerrainGenerator .Cover{
+                    background: url("static/tg.png");
+                    background-position: center;
+                    background-size: cover;
+                }
+                &#Frogger .Cover{
+                    background: url("static/frogger.jpg");
+                    background-position: center;
+                    background-size: cover;
+                }
+                &#AutoDrone .Cover{
+                    background: url("static/drone.png");
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+    .Contact{      
+        z-index: 2;
+        height: 400px;
+        background:rgb(18, 128, 201);
+        position: relative;
+        & > .Container{
+            padding-top: 75px;
+            width: 80vw;
+            margin: auto;
+            text-align: center;
+            h3{
+                font-size: 40px;
+                color: white;
+            }
+            h4{
+                color: white;
+            }
+            button{
+                cursor: pointer;
+                background: none;
+                font-size: 18px;
+                color: white;
+                margin-top: 50px;
+                padding: 10px;
+                border: 3px white solid;
+                border-radius: 30px;
+                outline: none;
+            }
+            @media screen and (max-width: $break-medium){
+                h3{
+                    font-size: 35px;
+                }
+                h4{
+                    font-size: 15px;
+                }
+            }
+            @media screen and (max-width: $break-small){
+                h3{
+                    font-size: 30px;
+                }
+                h4{
+                    font-size: 13px;
+                }
+            }
+        }
+        form{
+            animation: .25s ease-in 0s 1 MoveUpFadeIn;
+            padding: 50px 0;
+            width: 400px;
+            margin: auto;
+            h3{
+                color: white;
+                font-size: 24px;
+                margin: 5px;
+            }
+            .Input{
+                border-radius: 10px;
+                background: rgb(15.3, 108.8, 170.85);
+                width: 90%;
+                height: 30px;             
+                margin: 5px auto;
+                position: relative;
+                padding: 0 10px;
+                label{
+                    position: absolute;
+                    top: 50%;
+                    left: 10px;
+                    color: rgba(255, 255, 255, 1);
+                    transform: translateY(-50%);
+                }
+                input{
+                    width: 100%;
+                    height: 100%;
+                    outline: none;
+                    color: rgba(255, 255, 255, 1);
+                    border: none;
+                    background: none;                  
+                }
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover, 
+                input:-webkit-autofill:focus, 
+                input:-webkit-autofill:active  {
+                    font-weight: normal;
+                    font-size: 12px;
+                    -webkit-text-fill-color: white;
+                    box-shadow: 0 0 0 30px rgb(15.3, 108.8, 170.85) inset !important;
+                    -webkit-box-shadow: 0 0 0 30px rgb(15.3, 108.8, 170.85) inset !important;
+                }
+                &:focus-within{
+                    label{
+                        display: none;
+                    }
+                }
+            }
+            .TextArea{
+                border-radius: 10px;
+                background: rgba(0, 0, 0, 0.15);
+                height: 150px;
+                width: 90%;
+                margin: auto;
+                position: relative;
+                padding: 5px 10px;
+                label{
+                    position: absolute;
+                    top: 15px;
+                    left: 10px;
+                    color: rgba(255, 255, 255, 1);
+                    transform: translateY(-50%);
+                }
+                textarea{
+                    border: none;
+                    resize: none;
+                    color: rgba(255, 255, 255, 1);
+                    width: 100%;
+                    height: 100%;
+                    background: none;
+                    outline: none;
+                }
+                &:focus-within{
+                    label{
+                        display: none;
+                    }
+                }
+            }
+            button{
+                cursor: pointer;
+                border: 2px solid white;
+                border-radius: 10px;
+                background: none;
+                color: white;
+                width: 75px;
+                padding: 5px 10px;
+                margin: 10px 0 0 calc(90% - 70px);
+                outline: none;
+                &:focus, &:hover{
+                    background: rgba(255, 255, 255, 0.1);
+                }
+            }
+            @media screen and (max-width: $break-small){
+                width: 90%;
+            }
+        }
+    }
+    footer{
+        z-index: 2;
+        color: white;
+        background:  rgb(8, 90, 138);
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        .CopyRight{
+            position: relative;
+            margin-top: 10px;
+            p{
+                font-size: 12px;
+            }
+            
+        }
+        .Icon {
+            position: relative;
+            display: inline-block;
+            background: white;
+            height: 20px;
+            width: 20px;
+            padding: 8px;
+            margin: 7.5px;
+            border-radius: 50%;
+            i{
+                position: absolute;
+                top: 25%;
+                left: 50%;
+                transform: translateY(-50%);
+                transform: translateX(-50%);
+                font-size: 20px;
+                color:  rgb(8, 90, 138);
+            }
+        }
+        @media screen and (max-width: $break-small) {
+            .CopyRight p{
+                font-size: 10px;
+            }
+            .Icon{
+                margin: 12.5px 7.5px;
+                height: 10px;
+                width: 10px;
+                i{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes MoveUpFadeIn{
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    25%{
+        opacity: .5;
+        transform: translateY(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
