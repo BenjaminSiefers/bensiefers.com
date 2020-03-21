@@ -27,7 +27,7 @@ class ContactForm extends React.Component {
             },
             body: JSON.stringify(data),
           };
-        fetch('http://localhost:5000/contact', options).then( (res) => {
+        fetch(process.env.API_LOCATION + '/contact', options).then( (res) => {
             if(res.status === 200){
                 return res.json();
             }else{
